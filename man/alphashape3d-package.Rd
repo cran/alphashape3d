@@ -11,7 +11,7 @@ The package alphashape3d presents the implementation in R of the \eqn{\alpha}-sh
 \tabular{ll}{
 Package: \tab alphashape3d\cr
 Type: \tab Package\cr
-Version: \tab 0.1\cr
+Version: \tab 0.1-1\cr
 Date: \tab 2011-10-05\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
@@ -20,7 +20,7 @@ LazyLoad: \tab yes\cr
 \author{
 Thomas Lafarge, Beatriz Pateiro-Lopez.
 
-Maintainers: Thomas Lafarge <thowas.lafarge@gmail.com>, 
+Maintainers: Thomas Lafarge <thomas.lafarge@nist.gov>, 
 
 Beatriz Pateiro-Lopez <beatriz.pateiro@usc.es>
 }

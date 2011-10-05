@@ -1,11 +1,11 @@
-19f5202697e981755df11059e9697e3a *DESCRIPTION
+4a6ec457ca953b7576177afbe0e1d884 *DESCRIPTION
 4fc94b377b3f2968931015fc448ed25f *NAMESPACE
 0e3c762538e1830f94cd768a9e21f22b *R/ashape3d.R
 38b49d9e5fee40ec2cc59a1f6a6a7127 *R/components_ashape3d.R
 df8b2cfcf0bbf0fa983a3c66e3d7ac09 *R/plot.ashape3d.R
 a39e0e2a3bf7a735efe5fed8e8b9824d *R/rtorus.R
 648cbfc62309d484fda6a548c23ecc7a *R/volume_ashape3d.R
-aaee286b06c88bd5ffec04a21cfb7b1a *man/alphashape3d-package.Rd
+6be7f25bdd166dbfb4f70fa45593a688 *man/alphashape3d-package.Rd
 41fe00bff18cf13c314b6d940cba68f1 *man/ashape3d.Rd
 d2d9713fa57ff0f107991c87e7db4947 *man/components_ashape3d.Rd
 c1d60ebbf349a74b4dd276e5c7248f79 *man/plot.ashape3d.Rd
