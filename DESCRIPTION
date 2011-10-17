@@ -2,8 +2,8 @@ Package: alphashape3d
 Type: Package
 Title: Implementation of the 3D alpha-shape for the reconstruction of
         3D sets from a point cloud
-Version: 0.1-1
-Date: 2011-10-05
+Version: 0.2
+Date: 2011-10-17
 Author: Thomas Lafarge, Beatriz Pateiro-Lopez
 Maintainer: Thomas Lafarge <thomas.lafarge@nist.gov>, Beatriz
         Pateiro-Lopez <beatriz.pateiro@usc.es>
@@ -20,6 +20,6 @@ Description: The package alphashape3d presents the implementation in R
         graphical visualization of the estimated set.
 License: GPL-2
 LazyLoad: yes
-Packaged: 2011-10-05 13:57:43 UTC; administrador
+Packaged: 2011-10-17 14:46:14 UTC; administrador
 Repository: CRAN
-Date/Publication: 2011-10-05 14:41:28
+Date/Publication: 2011-10-17 18:41:34

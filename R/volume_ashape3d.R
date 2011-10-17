@@ -41,7 +41,7 @@ function (as3d, byComponents = FALSE, indexAlpha = 1)
             indexComponents = indexComponents + 1
             volumeComponents = rep(0, max(components[[indexComponents]]))
             for (ii in 1:dim(tetra)[1]) {
-                if (tetra[ii, 8 + iAlpha] == 1) 
+                if (tetra[ii, 6 + iAlpha] == 1) 
                   volumeComponents[components[[indexComponents]][tetra[ii, 
                     1]]] = volumeComponents[components[[indexComponents]][tetra[ii, 
                     1]]] + tetra[ii, 5]
@@ -56,7 +56,7 @@ function (as3d, byComponents = FALSE, indexAlpha = 1)
     }
     else {
         for (iAlpha in indexAlpha) volume = c(volume, sum(tetra[tetra[, 
-            8 + iAlpha] == 1, 5]))
+            6 + iAlpha] == 1, 5]))
     }
     return(volume)
 }
