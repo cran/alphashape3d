@@ -270,8 +270,6 @@ function (x, alpha, pert = FALSE, eps = 1e-09)
                 ct)/a^2
         }
         rho4 <- sqrt(rho.sq)
-        mu4 <- rho4
-        Mu4 <- rho4
         rf1 <- rho4[in.tc[i1]]
         rf2 <- rho4[in.tc[i2]]
         ntri2 <- length(rf1)
@@ -333,13 +331,13 @@ function (x, alpha, pert = FALSE, eps = 1e-09)
             in.edo, auxmu2, Mu2, mu1, mu1up, PACKAGE = "alphashape3d")
         mu1 <- mus1[[7]]
         Mu1 <- mus1[[8]]
-        tc.def <- cbind(tc, rep(0, ntc), rho4, mu4, Mu4)
+        tc.def <- cbind(tc, rep(0, ntc), rho4)
         tri.def <- cbind(t1u, t2u, t3u, on.ch3, at3, rho3, mu3, 
             Mu3)
         ed.def <- cbind(e1u, e2u, on.ch2, at2, rho2, mu2, Mu2)
         vt.def <- cbind(1:nvt, on.ch1, mu1, Mu1)
         colnames(tc.def) <- c("v1", "v2", "v3", "v4", "attached", 
-            "rhoT", "muT", "MuT")
+            "rhoT")
         colnames(tri.def) <- c("tr1", "tr2", "tr3", "on.ch", 
             "attached", "rhoT", "muT", "MuT")
         colnames(ed.def) <- c("ed1", "ed2", "on.ch", "attached", 
@@ -349,7 +347,7 @@ function (x, alpha, pert = FALSE, eps = 1e-09)
     if (length(alphaux) > 0) {
         for (i in 1:length(alphaux)) {
             alpha <- alphaux[i]
-            fclass <- numeric(length = length(tc.def[, "muT"]))
+            fclass <- numeric(length = length(tc.def[, "rhoT"]))
             fclass[alpha > tc.def[, "rhoT"]] <- 1
             tc.def <- cbind(tc.def, fclass)
             colnames(tc.def)[length(colnames(tc.def))] <- paste("fc:", 
