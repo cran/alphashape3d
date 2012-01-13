@@ -56,6 +56,19 @@ function (as3d, indexAlpha = 1)
                 toVisit = toVisit[-1]
             }
         }
+        label = matrix(as.numeric(as.matrix(as.data.frame(table(visited)))), 
+            ncol = 2)
+        if (any(label[, 1] == -1)) 
+            label = label[-which(label[, 1] == -1), , drop = FALSE]
+        if (dim(label)[1] > 1) {
+            label = label[order(label[, 2], decreasing = TRUE), 
+                ]
+            visited[visited == -1] = NA
+            for (ii in 1:dim(label)[1]) visited[visited == label[ii, 
+                1]] = -ii
+            visited[is.na(visited)] = 1
+            visited = -visited
+        }
         if (length(indexAlpha) > 1) {
             components = c(components, list(visited))
         }

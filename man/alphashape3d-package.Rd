@@ -11,8 +11,8 @@ The package alphashape3d presents the implementation in R of the \eqn{\alpha}-sh
 \tabular{ll}{
 Package: \tab alphashape3d\cr
 Type: \tab Package\cr
-Version: \tab 0.2\cr
-Date: \tab 2011-10-17\cr
+Version: \tab 1.0\cr
+Date: \tab 2011-01-13\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }

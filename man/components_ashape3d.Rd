@@ -25,7 +25,7 @@ The function \code{components_ashape3d} computes the connected components of the
 If \code{indexAlpha="all"} or \code{indexAlpha="ALL"} then the function computes the connected components of the \eqn{\alpha}-shape for all values of \eqn{\alpha} in \code{as3d$alpha}.
 }
 \value{
-If \code{indexAlpha} is a single value then the function returns a vector \code{v} of length equal to the sample size. For each sample point \code{i}, \code{v[i]} represents the number of the connected component to which the point belongs (for isolated points, \code{v[i]=-1}).
+If \code{indexAlpha} is a single value then the function returns a vector \code{v} of length equal to the sample size. For each sample point \code{i}, \code{v[i]} represents the label of the connected component to which the point belongs (for isolated points, \code{v[i]=-1}). The labels of the connected components are ordered by size where the largest one (in number of vertices) gets the smallest label which is one.
 
 Otherwise \code{components_ashape3d} returns a list of vectors describing the connected components of the \eqn{\alpha}-shape for each selected value of \eqn{\alpha}.
 }
@@ -33,8 +33,8 @@ Otherwise \code{components_ashape3d} returns a list of vectors describing the co
 \code{\link{ashape3d}}, \code{\link{plot.ashape3d}}
 }
 \examples{
-T1 <- rtorus(1000, 0.5, 1)
-T2 <- rtorus(1000, 0.5, 1, ct = c(3.5, 0, 0))
+T1 <- rtorus(1000, 0.5, 2)
+T2 <- rtorus(1000, 0.5, 2, ct = c(2, 0, 0), rotx = pi/2)
 x <- rbind(T1, T2)
 alpha <- c(0.25, 2)
 ashape3d.obj <- ashape3d(x, alpha = alpha)

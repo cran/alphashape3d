@@ -32,7 +32,7 @@ If the input points \code{x} are not in general position and \code{pert} is set 
 }
 \value{
 An object of class \code{"ashape3d"} with the following components (see Edelsbrunner and Mucke (1994) for notation):
-  \item{tetra}{For each tetrahedron of the 3D Delaunay triangulation, the matrix \code{tetra} stores the indices of the sample points defining the tetrahedron (columns 1 to 4), a value (1 or 0) indicating whether the tetrahedron is attached or unattached (column 5), a value that defines the intervals for which the tetrahedron belongs to the \eqn{\alpha}-complex (column 6) and for each \eqn{\alpha} a value (1 or 0) indicating whether the tetrahedron belongs to the \eqn{\alpha}-shape (columns 7 to last).}
+  \item{tetra}{For each tetrahedron of the 3D Delaunay triangulation, the matrix \code{tetra} stores the indices of the sample points defining the tetrahedron (columns 1 to 4), a value that defines the intervals for which the tetrahedron belongs to the \eqn{\alpha}-complex (column 5) and for each \eqn{\alpha} a value (1 or 0) indicating whether the tetrahedron belongs to the \eqn{\alpha}-shape (columns 6 to last).}
   \item{triang}{For each triangle of the 3D Delaunay triangulation, the matrix \code{triang} stores the indices of the sample points defining the triangle (columns 1 to 3),  a value (1 or 0) indicating whether the triangle is on the convex hull (column 4), a value (1 or 0) indicating whether the triangle is attached or unattached (column 5), values that define the intervals for which the triangle belongs to the \eqn{\alpha}-complex (columns 6 to 8) and for each \eqn{\alpha} a value (0, 1, 2 or 3) indicating, respectively, that the triangle is not in the \eqn{\alpha}-shape or it is interior, regular or singular (columns 9 to last).}
    \item{edge}{For each edge of the 3D Delaunay triangulation, the matrix \code{edge} stores the indices of the sample points defining the edge (columns 1 and 2),  a value (1 or 0) indicating whether the edge is on the convex hull (column 3), a value (1 or 0) indicating whether the edge is attached or unattached (column 4), values that define the intervals for which the edge belongs to the \eqn{\alpha}-complex (columns 5 to 7) and for each \eqn{\alpha} a value (0, 1, 2 or 3) indicating, respectively, that the edge is not in the \eqn{\alpha}-shape or it is interior, regular or singular (columns 8 to last).}
    \item{vertex}{For each sample point, the matrix \code{vertex} stores the index of the point (column 1),  a value (1 or 0) indicating whether the point is on the convex hull (column 2), values that define the intervals for which the point belongs to the \eqn{\alpha}-complex (columns 3 and 4) and for each \eqn{\alpha} a value (1, 2 or 3) indicating, respectively, if the point is interior, regular or singular (columns 5 to last).}
@@ -51,8 +51,8 @@ Edelsbrunner, H., Mucke, E. P. (1994). Three-Dimensional Alpha Shapes. \emph{ACM
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 %}
 \examples{
-T1 <- rtorus(1000, 0.5, 1)
-T2 <- rtorus(1000, 0.5, 1, ct = c(3.5, 0, 0))
+T1 <- rtorus(1000, 0.5, 2)
+T2 <- rtorus(1000, 0.5, 2, ct = c(2, 0, 0), rotx = pi/2)
 x <- rbind(T1, T2)
 # Value of alpha
 alpha <- 0.25
@@ -61,7 +61,7 @@ ashape3d.obj <- ashape3d(x, alpha = alpha)
 plot(ashape3d.obj)
 
 # For new values of alpha, we can use ashape3d.obj as input (faster)
-alpha <- c(0.1, 1)
+alpha <- c(0.15, 1)
 ashape3d.obj <- ashape3d(ashape3d.obj, alpha = alpha)
 plot(ashape3d.obj, indexAlpha = 2:3)
 }
