@@ -47,8 +47,8 @@ If \code{indexAlpha="all"} or \code{indexAlpha="ALL"} then the function represen
 \code{\link{ashape3d}}, \code{\link{components_ashape3d}}
 }
 \examples{
-T1 <- rtorus(1000, 0.5, 1)
-T2 <- rtorus(1000, 0.5, 1, ct = c(3.5, 0, 0))
+T1 <- rtorus(1000, 0.5, 2)
+T2 <- rtorus(1000, 0.5, 2, ct = c(2, 0, 0), rotx = pi/2)
 x <- rbind(T1, T2)
 alpha <- c(0.15, 0.25, 1)
 ashape3d.obj <- ashape3d(x, alpha = alpha)
