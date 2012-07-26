@@ -11,8 +11,8 @@ The package alphashape3d presents the implementation in R of the \eqn{\alpha}-sh
 \tabular{ll}{
 Package: \tab alphashape3d\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2011-01-13\cr
+Version: \tab 1.0-1\cr
+Date: \tab 2011-07-26\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
@@ -20,9 +20,7 @@ LazyLoad: \tab yes\cr
 \author{
 Thomas Lafarge, Beatriz Pateiro-Lopez.
 
-Maintainers: Thomas Lafarge <thomas.lafarge@nist.gov>, 
-
-Beatriz Pateiro-Lopez <beatriz.pateiro@usc.es>
+Maintainers: Beatriz Pateiro-Lopez <beatriz.pateiro@usc.es>
 }
 \references{
 Edelsbrunner, H., Mucke, E. P. (1994). Three-Dimensional Alpha Shapes. \emph{ACM Transactions on Graphics}, 13(1), pp.43-72.
