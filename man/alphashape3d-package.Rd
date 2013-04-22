@@ -1,6 +1,5 @@
-  \name{alphashape3d-package}
+\name{alphashape3d-package}
 \alias{alphashape3d-package}
-\alias{alphashape3d}
 \docType{package}
 \title{
 Computation of the 3D \eqn{\alpha}-shape}
@@ -11,8 +10,8 @@ The package alphashape3d presents the implementation in R of the \eqn{\alpha}-sh
 \tabular{ll}{
 Package: \tab alphashape3d\cr
 Type: \tab Package\cr
-Version: \tab 1.0-1\cr
-Date: \tab 2011-07-26\cr
+Version: \tab 1.0-2\cr
+Date: \tab 2013-04-22\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }

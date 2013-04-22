@@ -7,8 +7,8 @@
 //Return 1 if the ray intersect the triangle -1 if it does backward 0 if it doesn t and 2 if the point lie on the triangle
 int rayTriangleIntersection(double * point,double * direction,double * triangles)
 {
-	double e[3];
-	double e2[3];
+	double e[3]={0};
+	double e2[3]={0};
 	double h[3];
 	double f[3];
 	double d[3];
