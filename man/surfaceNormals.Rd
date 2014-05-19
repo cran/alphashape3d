@@ -8,7 +8,7 @@ Normal vectors computation
 This function calculates the normal vectors of all the triangles which belong to the boundary of the \eqn{\alpha}-shape. 
 }
 \usage{
-surfaceNormals(x, indexAlpha = 1, display = FALSE, col = 3, ...)
+surfaceNormals(x, indexAlpha = 1, display = FALSE, col = 3, scale = 1, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -25,7 +25,10 @@ Logical, if TRUE, \code{surfaceNormals} open a new rgl device and display the re
 \item{col}{
 Color of the normal vectors.
 }
-\item{...}{
+\item{scale}{
+Scale parameter to control the length of the surface normals, only affect display.
+}
+\item{\dots}{
 Material properties. See \code{\link{rgl.material}} for details.
 }
 }
