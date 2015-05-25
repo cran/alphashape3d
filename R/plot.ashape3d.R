@@ -1,4 +1,8 @@
-plot.ashape3d<-function(x,clear=TRUE,col=c(2,2,2),byComponents=FALSE,indexAlpha = 1, transparency = 1, walpha = FALSE,...){
+plot.ashape3d<-function(x,clear=TRUE,col=c(2,2,2),byComponents=FALSE,indexAlpha = 1, transparency = 1, walpha = FALSE,
+	triangles = TRUE, edges = TRUE, vertices = TRUE, ...){
+arg.triangles<-triangles
+arg.edges<-edges
+arg.vertices<-vertices
 as3d<-x
 triangles<-as3d$triang
 edges<-as3d$edge
@@ -45,22 +49,27 @@ if (byComponents)
 		
 		# Singular and regular triangles
 		# ====================================================
-		tr<-t(triangles[triangles[,8+iAlpha]==2|triangles[,8+iAlpha]==3,c("tr1","tr2","tr3")])
-		if(length(tr )!= 0 )
-			rgl.triangles(x[tr, 1], x[tr, 2], x[tr, 3], col = colors[1+components[[indexComponents]][tr]],alpha=transparency,...)
+		if (arg.triangles) {
+			tr<-t(triangles[triangles[,8+iAlpha]==2|triangles[,8+iAlpha]==3,c("tr1","tr2","tr3")])
+			if(length(tr )!= 0 )
+				rgl.triangles(x[tr, 1], x[tr, 2], x[tr, 3], col = colors[1+components[[indexComponents]][tr]],alpha=transparency,...)
+		}
 		
 		# Singular and regular edges
 		# ====================================================
-		ed<-t(edges[edges[,7+iAlpha]==2|edges[,7+iAlpha]==3,c("ed1","ed2")])
-		if(length(ed )!= 0 )
-			rgl.lines(x[ed, 1], x[ed, 2], x[ed, 3], col = colors[1+components[[indexComponents]][ed]],alpha=transparency,...)
-		
+		if (arg.edges) {
+			ed<-t(edges[edges[,7+iAlpha]==2|edges[,7+iAlpha]==3,c("ed1","ed2")])
+			if(length(ed )!= 0 )
+				rgl.lines(x[ed, 1], x[ed, 2], x[ed, 3], col = colors[1+components[[indexComponents]][ed]],alpha=transparency,...)
+		}
 		
 		# Singular and regular points
 		# ====================================================
-		vt<-t(vertex[vertex[,4+iAlpha]==2|vertex[,4+iAlpha]==3,"v1"])
-		if(length(vt )!= 0 )
-			rgl.points(x[vt, 1], x[vt, 2], x[vt, 3], col = colors[1+components[[indexComponents]][vt]],alpha=transparency,...)
+		if (arg.vertices) {
+			vt<-t(vertex[vertex[,4+iAlpha]==2|vertex[,4+iAlpha]==3,"v1"])
+			if(length(vt )!= 0 )
+				rgl.points(x[vt, 1], x[vt, 2], x[vt, 3], col = colors[1+components[[indexComponents]][vt]],alpha=transparency,...)
+		}
 	}
 	
 	
@@ -78,23 +87,28 @@ else
 
 		# Singular and regular triangles
 		# ====================================================
-		tr<-t(triangles[triangles[,8+iAlpha]==2|triangles[,8+iAlpha]==3,c("tr1","tr2","tr3")])
-		if(length(tr )!= 0 )
-			rgl.triangles(x[tr, 1], x[tr, 2], x[tr, 3], col =col[1],,alpha=transparency,...)
+		if (arg.triangles) {
+			tr<-t(triangles[triangles[,8+iAlpha]==2|triangles[,8+iAlpha]==3,c("tr1","tr2","tr3")])
+			if(length(tr )!= 0 )
+				rgl.triangles(x[tr, 1], x[tr, 2], x[tr, 3], col =col[1],,alpha=transparency,...)
+		}
 		
 		# Singular and regular edges
 		# ====================================================
-		ed<-t(edges[edges[,7+iAlpha]==2|edges[,7+iAlpha]==3,c("ed1","ed2")])
-
-		if(length(ed )!= 0 )
-			rgl.lines(x[ed, 1], x[ed, 2], x[ed, 3], col =col[2],alpha=transparency,...)
+		if (arg.edges) {
+			ed<-t(edges[edges[,7+iAlpha]==2|edges[,7+iAlpha]==3,c("ed1","ed2")])
+			if(length(ed )!= 0 )
+				rgl.lines(x[ed, 1], x[ed, 2], x[ed, 3], col =col[2],alpha=transparency,...)
+		}
 		
 		
 		# Singular and regular points
 		# ====================================================
-		vt<-t(vertex[vertex[,4+iAlpha]==2|vertex[,4+iAlpha]==3,"v1"])
-		if(length(vt )!= 0 )
-			rgl.points(x[vt, 1], x[vt, 2], x[vt, 3], col =col[3],alpha=transparency,...)
+		if (arg.vertices) {
+			vt<-t(vertex[vertex[,4+iAlpha]==2|vertex[,4+iAlpha]==3,"v1"])
+			if(length(vt )!= 0 )
+				rgl.points(x[vt, 1], x[vt, 2], x[vt, 3], col =col[3],alpha=transparency,...)
+		}
 	
 	}
 
