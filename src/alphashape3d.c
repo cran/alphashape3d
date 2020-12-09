@@ -415,6 +415,7 @@ SEXP sortbycolumn(SEXP t1,SEXP t2,SEXP t3) {
         INTEGER(index)[i] = array[i].orig_pos +1;
     }
     UNPROTECT(1);
+	free(array);
 
     return(index);
 }
