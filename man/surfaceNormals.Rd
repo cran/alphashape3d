@@ -23,7 +23,7 @@ and display the related \eqn{\alpha}-shape and its normals vectors.}
 \item{scale}{Scale parameter to control the length of the surface normals,
 only affect display.}
 
-\item{\dots}{Material properties. See \code{\link{rgl.material}} for
+\item{\dots}{Material properties. See \code{\link{material3d}} for
 details.}
 }
 \value{

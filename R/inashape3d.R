@@ -35,7 +35,7 @@
 #' in3d <- inashape3d(ashape3d.obj, points = points)
 #' plot(ashape3d.obj, transparency = 0.2)
 #' colors <- ifelse(in3d, "blue", "green")
-#' rgl.points(points, col = colors)
+#' points3d(points, col = colors)
 #'
 #' @export inashape3d
 inashape3d <-
@@ -44,7 +44,7 @@ function (as3d, indexAlpha = 1, points)
     points = matrix(as.numeric(points), ncol = 3)
     triangles <- as3d$triang
     x <- as3d$x
-    if (class(indexAlpha) == "character" & (indexAlpha == "ALL" |
+	if (inherits(indexAlpha, "character") & (indexAlpha == "ALL" |
         indexAlpha == "all"))
         indexAlpha = 1:length(as3d$alpha)
     if (any(indexAlpha > length(as3d$alpha)) | any(indexAlpha <=

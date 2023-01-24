@@ -116,10 +116,14 @@ function (x, alpha, pert = FALSE, eps = 1e-09)
         }
     }
     else {
-        if (any(duplicated(x))) {
-            warning("Duplicate points were removed", call. = FALSE,
+	    aux <- RANN::nn2(x, searchtype = 'radius', radius = 1e-6)
+        almdup <- which(aux$nn.idx[, 2] != 0)
+        dup <- unique(as.numeric(aux$nn.idx[almdup, ]))
+        if(length(dup) > 0){
+		    warning("Duplicate points were removed", call. = FALSE,
                 immediate. = TRUE)
-            x <- unique(x)
+            almdup <- unique(t(apply(aux$nn.idx[almdup, ], 1, sort, decreasing = TRUE)))[, 1]
+            x <- x[-setdiff(dup, almdup), ]
         }
         inh <- 0
         x = x * 1

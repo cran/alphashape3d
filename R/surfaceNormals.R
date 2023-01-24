@@ -22,7 +22,7 @@
 #' @param col Color of the normal vectors.
 #' @param scale Scale parameter to control the length of the surface normals,
 #' only affect display.
-#' @param \dots Material properties. See \code{\link{rgl.material}} for
+#' @param \dots Material properties. See \code{\link{material3d}} for
 #' details.
 #' @return If \code{indexAlpha} is a single value then the function returns an
 #' object of class \code{"normals"} with the following components:
@@ -52,7 +52,7 @@ function (x, indexAlpha = 1, display = FALSE, col = 3, scale = 1,
     edges <- as3d$edge
     vertex <- as3d$vertex
     x <- as3d$x
-    if (class(indexAlpha) == "character" & (indexAlpha == "ALL" |
+    if (inherits(indexAlpha, "character") & (indexAlpha == "ALL" |
         indexAlpha == "all"))
         indexAlpha = 1:length(as3d$alpha)
     if (any(indexAlpha > length(as3d$alpha)) | any(indexAlpha <=
@@ -83,7 +83,7 @@ function (x, indexAlpha = 1, display = FALSE, col = 3, scale = 1,
                 segment[2 * ii, ] = middlePoint[ii, ] + scale *
                   normMat[ii, ]
             }
-            rgl.open()
+            open3d()
             plot(as3d, indexAlpha = iAlpha)
             segments3d(segment, col = col, alpha = 1, ...)
         }

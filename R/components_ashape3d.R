@@ -52,12 +52,12 @@
 components_ashape3d <-
 function (as3d, indexAlpha = 1)
 {
-    if (class(as3d) != "ashape3d") {
+    if (!inherits(as3d, "ashape3d")) {
         cat("Argument is not of class ashape3d.\n")
         return(invisible())
     }
     components = NULL
-    if (class(indexAlpha) == "character")
+	if (inherits(indexAlpha, "character")) 
         if (indexAlpha == "ALL" | indexAlpha == "all")
             indexAlpha = 1:length(as3d$alpha)
     if (any(indexAlpha > length(as3d$alpha)) | any(indexAlpha <=

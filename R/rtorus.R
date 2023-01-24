@@ -14,11 +14,11 @@
 #' @examples
 #' 
 #' T1 <- rtorus(2000, 0.5, 2.5)
-#' rgl.bbox()
-#' rgl.points(T1, col = 4)
+#' bbox3d(color = c("white", "black"))
+#' points3d(T1, col = 4)
 #' 
 #' T2 <- rtorus(2000, 0.5, 2.5, ct = c(2, 0, 0.5), rotx = pi/2)
-#' rgl.points(T2, col = 2)
+#' points3d(T2, col = 2)
 #' 
 #' @export rtorus
 rtorus <-

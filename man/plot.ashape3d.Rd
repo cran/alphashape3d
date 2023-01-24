@@ -38,7 +38,7 @@ rgl device.}
 
 \item{vertices}{Logical, if TRUE vertices are plotted.}
 
-\item{\dots}{Material properties. See \code{\link{rgl.material}} for
+\item{\dots}{Material properties. See \code{\link{material3d}} for
 details.}
 }
 \description{

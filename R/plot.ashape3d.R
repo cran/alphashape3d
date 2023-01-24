@@ -30,7 +30,7 @@
 #' @param triangles Logical, if TRUE triangles are plotted.
 #' @param edges Logical, if TRUE edges are plotted.
 #' @param vertices Logical, if TRUE vertices are plotted.
-#' @param \dots Material properties. See \code{\link{rgl.material}} for
+#' @param \dots Material properties. See \code{\link{material3d}} for
 #' details.
 #' @seealso \code{\link{ashape3d}}, \code{\link{components_ashape3d}}
 #' @importFrom grDevices rainbow
@@ -63,7 +63,7 @@ function (x, clear = TRUE, col = c(2, 2, 2), byComponents = FALSE,
     edges <- as3d$edge
     vertex <- as3d$vertex
     x <- as3d$x
-    if (class(indexAlpha) == "character")
+    if (inherits(indexAlpha, "character"))
         if (indexAlpha == "ALL" | indexAlpha == "all")
             indexAlpha = 1:length(as3d$alpha)
     if (any(indexAlpha > length(as3d$alpha)) | any(indexAlpha <=
@@ -76,7 +76,7 @@ function (x, clear = TRUE, col = c(2, 2, 2), byComponents = FALSE,
             sep = ""), call. = TRUE)
     }
     if (clear) {
-        rgl.clear()
+        clear3d()
     }
     if (byComponents) {
         components = components_ashape3d(as3d, indexAlpha)
@@ -85,10 +85,10 @@ function (x, clear = TRUE, col = c(2, 2, 2), byComponents = FALSE,
         indexComponents = 0
         for (iAlpha in indexAlpha) {
             if (iAlpha != indexAlpha[1])
-                rgl.open()
+                open3d()
             if (walpha)
                 title3d(main = paste("alpha =", as3d$alpha[iAlpha]))
-            cat("Device ", rgl.cur(), " : alpha = ", as3d$alpha[iAlpha],
+            cat("Device ", cur3d(), " : alpha = ", as3d$alpha[iAlpha],
                 "\n")
             indexComponents = indexComponents + 1
             components[[indexComponents]][components[[indexComponents]] ==
@@ -99,7 +99,7 @@ function (x, clear = TRUE, col = c(2, 2, 2), byComponents = FALSE,
                   2 | triangles[, 8 + iAlpha] == 3, c("tr1",
                   "tr2", "tr3")])
                 if (length(tr) != 0)
-                  rgl.triangles(x[tr, 1], x[tr, 2], x[tr, 3],
+                  triangles3d(x[tr, 1], x[tr, 2], x[tr, 3],
                     col = colors[1 + components[[indexComponents]][tr]],
                     alpha = transparency, ...)
             }
@@ -107,7 +107,7 @@ function (x, clear = TRUE, col = c(2, 2, 2), byComponents = FALSE,
                 ed <- t(edges[edges[, 7 + iAlpha] == 2 | edges[,
                   7 + iAlpha] == 3, c("ed1", "ed2")])
                 if (length(ed) != 0)
-                  rgl.lines(x[ed, 1], x[ed, 2], x[ed, 3], col = colors[1 +
+                  segments3d(x[ed, 1], x[ed, 2], x[ed, 3], col = colors[1 +
                     components[[indexComponents]][ed]], alpha = transparency,
                     ...)
             }
@@ -115,7 +115,7 @@ function (x, clear = TRUE, col = c(2, 2, 2), byComponents = FALSE,
                 vt <- t(vertex[vertex[, 4 + iAlpha] == 2 | vertex[,
                   4 + iAlpha] == 3, "v1"])
                 if (length(vt) != 0)
-                  rgl.points(x[vt, 1], x[vt, 2], x[vt, 3], col = colors[1 +
+                  points3d(x[vt, 1], x[vt, 2], x[vt, 3], col = colors[1 +
                     components[[indexComponents]][vt]], alpha = transparency,
                     ...)
             }
@@ -124,31 +124,31 @@ function (x, clear = TRUE, col = c(2, 2, 2), byComponents = FALSE,
     else {
         for (iAlpha in indexAlpha) {
             if (iAlpha != indexAlpha[1])
-                rgl.open()
+                open3d()
             if (walpha)
                 title3d(main = paste("alpha =", as3d$alpha[iAlpha]))
-            cat("Device ", rgl.cur(), " : alpha = ", as3d$alpha[iAlpha],
+            cat("Device ", cur3d(), " : alpha = ", as3d$alpha[iAlpha],
                 "\n")
             if (arg.triangles) {
                 tr <- t(triangles[triangles[, 8 + iAlpha] ==
                   2 | triangles[, 8 + iAlpha] == 3, c("tr1",
                   "tr2", "tr3")])
                 if (length(tr) != 0)
-                  rgl.triangles(x[tr, 1], x[tr, 2], x[tr, 3],
-                    col = col[1], , alpha = transparency, ...)
+                  triangles3d(x[tr, 1], x[tr, 2], x[tr, 3],
+                    col = col[1], alpha = transparency, ...)
             }
             if (arg.edges) {
                 ed <- t(edges[edges[, 7 + iAlpha] == 2 | edges[,
                   7 + iAlpha] == 3, c("ed1", "ed2")])
                 if (length(ed) != 0)
-                  rgl.lines(x[ed, 1], x[ed, 2], x[ed, 3], col = col[2],
+                  segments3d(x[ed, 1], x[ed, 2], x[ed, 3], col = col[2],
                     alpha = transparency, ...)
             }
             if (arg.vertices) {
                 vt <- t(vertex[vertex[, 4 + iAlpha] == 2 | vertex[,
                   4 + iAlpha] == 3, "v1"])
                 if (length(vt) != 0)
-                  rgl.points(x[vt, 1], x[vt, 2], x[vt, 3], col = col[3],
+                  points3d(x[vt, 1], x[vt, 2], x[vt, 3], col = col[3],
                     alpha = transparency, ...)
             }
         }

@@ -48,7 +48,7 @@ points <- matrix(c(5*runif(10000) - 2.5, rep(0.01, 5000)), nc = 3)
 in3d <- inashape3d(ashape3d.obj, points = points)
 plot(ashape3d.obj, transparency = 0.2)
 colors <- ifelse(in3d, "blue", "green")
-rgl.points(points, col = colors)
+points3d(points, col = colors)
 
 }
 \seealso{
