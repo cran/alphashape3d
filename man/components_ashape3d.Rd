@@ -9,7 +9,7 @@ components_ashape3d(as3d, indexAlpha = 1)
 \arguments{
 \item{as3d}{An object of class \code{"ashape3d"} that represents the
 \eqn{\alpha}-shape of a given sample of points in the three-dimensional
-space, see \code{\link{ashape3d}}.}
+space, see \code{\link[alphashape3d]{ashape3d}}.}
 
 \item{indexAlpha}{A single value or vector with the indexes of
 \code{as3d$alpha} that should be used for the computation, see Details.}
@@ -62,5 +62,5 @@ plot(ashape3d.obj, byComponents = TRUE, indexAlpha = 1)
 
 }
 \seealso{
-\code{\link{ashape3d}}, \code{\link{plot.ashape3d}}
+\code{\link[alphashape3d]{ashape3d}}, \code{\link[alphashape3d]{plot.ashape3d}}
 }

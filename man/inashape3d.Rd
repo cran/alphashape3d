@@ -9,7 +9,7 @@ inashape3d(as3d, indexAlpha = 1, points)
 \arguments{
 \item{as3d}{An object of class \code{"ashape3d"} that represents the
 \eqn{\alpha}-shape of a given sample of points in the three-dimensional
-space, see \code{\link{ashape3d}}.}
+space, see \code{\link[alphashape3d]{ashape3d}}.}
 
 \item{indexAlpha}{A single value or vector with the indexes of
 \code{as3d$alpha} that should be used for the computation, see Details.}
@@ -52,5 +52,5 @@ points3d(points, col = colors)
 
 }
 \seealso{
-\code{\link{ashape3d}}
+\code{\link[alphashape3d]{ashape3d}}
 }

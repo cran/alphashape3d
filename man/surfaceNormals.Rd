@@ -10,7 +10,7 @@ surfaceNormals(x, indexAlpha = 1, display = FALSE, col = 3, scale = 1,
 \arguments{
 \item{x}{An object of class \code{"ashape3d"} that represents the
 \eqn{\alpha}-shape of a given sample of points in the three-dimensional
-space, see \code{\link{ashape3d}}.}
+space, see \code{\link[alphashape3d]{ashape3d}}.}
 
 \item{indexAlpha}{A single value or vector with the indexes of
 \code{as3d$alpha} that should be used for the computation, see Details.}
@@ -23,7 +23,7 @@ and display the related \eqn{\alpha}-shape and its normals vectors.}
 \item{scale}{Scale parameter to control the length of the surface normals,
 only affect display.}
 
-\item{\dots}{Material properties. See \code{\link{material3d}} for
+\item{\dots}{Material properties. See \code{\link[rgl]{material3d}} for
 details.}
 }
 \value{
@@ -60,5 +60,5 @@ surfaceNormals(ashape3d.obj, display = TRUE)
 
 }
 \seealso{
-\code{\link{ashape3d}}
+\code{\link[alphashape3d]{ashape3d}}
 }

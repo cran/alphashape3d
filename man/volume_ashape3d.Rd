@@ -9,7 +9,7 @@ volume_ashape3d(as3d, byComponents = FALSE, indexAlpha = 1)
 \arguments{
 \item{as3d}{An object of class \code{"ashape3d"} that represents the
 \eqn{\alpha}-shape of a given sample of points in the three-dimensional
-space, see \code{\link{ashape3d}}.}
+space, see \code{\link[alphashape3d]{ashape3d}}.}
 
 \item{byComponents}{Logical, if FALSE (default) \code{volume_ashape3d}
 computes the volume of the whole \eqn{\alpha}-shape. If TRUE,
@@ -56,5 +56,5 @@ volume_ashape3d(ashape3d.obj, byComponents = TRUE)
 
 }
 \seealso{
-\code{\link{ashape3d}}, \code{\link{components_ashape3d}}
+\code{\link[alphashape3d]{ashape3d}}, \code{\link[alphashape3d]{components_ashape3d}}
 }

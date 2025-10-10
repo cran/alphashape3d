@@ -1,4 +1,4 @@
-cf354079fa3caf88f5280071267ea7dd *DESCRIPTION
+360908ea251e03dc3e62e1c99a0771a7 *DESCRIPTION
 afb19cfe93e9b0dbce5d5fa4f75319c0 *NAMESPACE
 1ce664206748cf5c3b49256d30c97264 *R/ashape3d.R
 39c700c9cea10958cd826ff3916ca8f5 *R/components_ashape3d.R
@@ -8,14 +8,13 @@ b9b4c117e474d712fca57e695ed1045c *R/intersectiontriangle.R
 5fc57efe674aedc8c6950aee99886853 *R/rtorus.R
 e596d4ed7e8aab63c3d595c579f310a6 *R/surfaceNormals.R
 0e18a338347ed3f93a0f05bb75557ddc *R/volume_ashape3d.R
-a9a20f4042d8bde87664c62b8ab320b0 *README.md
 d88d266c047144c85aeac0fcf40eab6a *man/ashape3d.Rd
-55d977bbcef0c1e3e2a7236c262f3b26 *man/components_ashape3d.Rd
-773e402f128ace684da7bd0b524af188 *man/inashape3d.Rd
-4b192bf3153d596e3d7f1ad8b33b9605 *man/plot.ashape3d.Rd
+a47341f71d21f2a98d4a4288a04dd79f *man/components_ashape3d.Rd
+cacd08756e1f9830649248ae982fc4c4 *man/inashape3d.Rd
+3128f4b36496f4de95ba72df9782ce87 *man/plot.ashape3d.Rd
 5b189acab6dd80b253d2f95c018ad80b *man/rtorus.Rd
-0afdf77b24d72715d93ea6d3d5d9aa9a *man/surfaceNormals.Rd
-e5ebad7051b82d91939cdb11158a086b *man/volume_ashape3d.Rd
+5bb9c59ddc1864ed1e4c8f267abc4e87 *man/surfaceNormals.Rd
+d95ef9ebedc216242d12fcc4ac5e6a76 *man/volume_ashape3d.Rd
 c12872bc3145850cd3a99ce5e7eb53d8 *src/alphashape3d.c
 493c642adbd4a0cd4afe72ec7d20a89b *src/init.c
 45ffe92bf0e76b1dde7d10d9112f090d *src/insideashape.c

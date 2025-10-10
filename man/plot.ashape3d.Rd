@@ -11,7 +11,7 @@
 \arguments{
 \item{x}{An object of class \code{"ashape3d"} that represents the
 \eqn{\alpha}-shape of a given sample of points in the three-dimensional
-space, see \code{\link{ashape3d}}.}
+space, see \code{\link[alphashape3d]{ashape3d}}.}
 
 \item{clear}{Logical, specifying whether the current rgl device should be
 cleared.}
@@ -21,7 +21,7 @@ edges and vertices composing the \eqn{\alpha}-shape, respectively.}
 
 \item{byComponents}{Logical, if TRUE the connected components of the
 \eqn{\alpha}-shape are represented in different colors, see
-\code{\link{components_ashape3d}}.}
+\code{\link[alphashape3d]{components_ashape3d}}.}
 
 \item{indexAlpha}{A single value or vector with the indexes of
 \code{x$alpha} that should be used for the computation, see Details.}
@@ -38,12 +38,12 @@ rgl device.}
 
 \item{vertices}{Logical, if TRUE vertices are plotted.}
 
-\item{\dots}{Material properties. See \code{\link{material3d}} for
+\item{\dots}{Material properties. See \code{\link[rgl]{material3d}} for
 details.}
 }
 \description{
 This function plots the \eqn{\alpha}-shape in 3D using the package
-\code{\link{rgl}}.
+\code{\link[rgl]{rgl}}.
 }
 \details{
 The function \code{plot.ashape3d} opens a rgl device for each value of
@@ -70,5 +70,5 @@ plot(ashape3d.obj, byComponents = TRUE, indexAlpha = 2)
 
 }
 \seealso{
-\code{\link{ashape3d}}, \code{\link{components_ashape3d}}
+\code{\link[alphashape3d]{ashape3d}}, \code{\link[alphashape3d]{components_ashape3d}}
 }
